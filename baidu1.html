@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+            color:#000;
+        }
+        body{
+            font-size:12px;
+            font-family:Arial,Verdana,Tahoma,"微软雅黑","黑体";
+            line-height:120%;
+            background:#fff;
+            margin:0;
+            overflow-x:hidden;
+        }
+        p,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,form,table{
+            margin:0;
+            padding:0;
+        }
+        a,img{
+            border:none;
+        }
+        img{
+            vertical-align:middle;
+            border:0;
+        }
+        li{
+            list-style:none;
+        }
+        i,em{
+            font-style:normal;
+        }
+        a{
+            text-decoration:none;
+            color:#000000;
+            border:0;
+        }
+        a:link{
+            text-decoration:none;
+            color:#000000;
+        }
+        a:hover{
+            text-decoration:none;
+            color:#000000;
+        }
+        a:visited{
+            text-decoration:none;
+            color:#000000;
+        }
+        a:active{
+            text-decoration:none;
+            color:#000000;
+        }
+        .clearfix:before,.clearfix:after{
+            display:table;
+            content:"";
+        }
+        .clearfix:after{
+            clear:both;
+        }
+        .clearfix{
+            *zoom:1;
+        }
+        .allpage{
+            width:800px;
+            margin:0 auto;
+        }
+        .header{
+            position:relative;
+        }
+        .header img{
+            padding:12px 0 13px 29px;
+            width:135px;
+            height:66px;
+        }
+        .top li{
+            float:left;
+        }
+        .top_left{
+            position:absolute;
+            top:7px;
+            right:103px;
+            margin-right:7px;
+        }
+        .top_left a{
+            display:block;
+            color:#de1600;
+            font-size:15px;
+        }
+        .top_right{
+            position:absolute;
+            top:7px;
+            right:17px;
+            background-image:url("img/bj.png") ;
+            background-repeat: no-repeat;
+            width:85px;
+        }
+        .top_right a{
+            display:block;
+            color:#000000;
+            font-size:15px;
+            padding-left:25px;
+        }
+        .text{
+            color:#e40000;
+            position:absolute;
+            top:32px;
+            right:16px;
+            font-size:15px;
+        }
+        .nav{
+            padding-bottom:10px;
+        }
+        .nav ul{
+            padding-left:18px;
+        }
+        .nav li{
+            width:85px;
+            height:25px;
+            background-color:#ffe48b;
+            float:left;
+        }
+        .nav li:hover{
+            background-color:#ff5c01;
+        }
+        .nav li a{
+            display:block;
+            text-align:center;
+            line-height:25px;
+        }
+        .section{
+            width:763px;
+            border:1px #c44413 solid;
+            margin-left:18px;
+            position:relative;
+            margin-bottom:18px;
+        }
+        .left_sec{
+            float:left;
+        }
+        .left_sec_top{
+            background-image: url("img/bj1.png");
+            background-repeat: no-repeat;
+            width:548px;
+            height:155px;
+        }
+        h2{
+            line-height:40px;
+            position:absolute;
+            top:36px;
+            left:119px;
+        }
+        input{
+            position:absolute;
+            top:112px;
+            left:410px;
+            background-image:url("img/bj2.png")
+        }
+        .left_sec_mid {
+            width: 548px;
+            height: 35px;
+            background-color: #ff5c01;
+            background-image: url("img/logo.png");
+            background-repeat: no-repeat;
+            background-position:6px 8px;
+            position:relative;
+        }
+        .keyword input{
+            position: absolute;
+            top:6px;
+            left:43px;
+        }
+        .price input{
+            position: absolute;
+            top:6px;
+            left:194px;
+        }
+        .left_sec_mid li{
+            position:absolute;
+            top:6px;
+            right:124px;
+            width:99px;
+            height:20px;
+            background-color:#feeddb;
+            padding-top:3px;
+        }
+        .left_sec_mid li a{
+            height:13px;
+            display:block;
+            text-align:center;
+            line-height:13px;
+            color:#0101c3;
+            border-bottom:1px #0101c3 solid;
+        }
+        h4{
+            color:#fe0002;
+            float:left;
+            line-height:21px;
+        }
+        .blue,.red{
+            float:left;
+            line-height:21px;
+        }
+        .blue li a{
+            color:#0000fe;
+            font-weight: bold;
+        }
+        .red li a{
+            color:#e40001;
+            font-weight: bold;
+        }
+        p{
+            color:#fe0002;
+            float:left;
+            font-weight: bold;
+            line-height:21px;
+        }
+        .text1{
+            float:left;
+            color:#0000fe;
+            font-weight: bold;
+            line-height:21px;
+        }
+        .text3,.text4{
+            float:left;
+            color:#0000fe;
+            line-height:21px;
+        }
+        .text3{
+            padding-left:148px;
+            margin-right:32px;
+        }
+        .text5{
+            color:#0000fe;
+            padding-left:148px;
+            line-height:21px;
+        }
+        .text6{
+            color:#0000fe;
+            padding-left:148px;
+            line-height:21px;
+            float:left;
+        }
+        .text7{
+            line-height:21px;
+            float:left;
+            color:#ff0100;
+            font-weight:bold;
+        }
+        .text8{
+            float:left;
+            line-height:21px;
+            font-weight:bold;
+        }
+        .text8 li a{
+            padding-left:14px;
+            color:#ff0100;
+            font-weight:bold;
+        }
+        .right_sec{
+            border-left:1px #c44413 solid;
+            float:right;
+            width:211px;
+        }
+        .consult{
+            padding:6px 0 8px 10px;
+            width:210px;
+            height:25px;
+            background-color:#ffe48b;
+            color:#ff1601;
+            font-size:15px;
+            font-weight:bold;
+        }
+        .right_sec_top p{
+            padding:7px 0 0 10px;
+            line-height:20px;
+            font-size:15px;
+            font-weight:normal;
+            color:#010101;
+        }
+        .right_sec_mid p{
+            padding:4px 0 0 6px;
+        }
+        .black p{
+            color:#010101;
+        }
+        .service{
+            padding:6px 0 8px 10px;
+            width:210px;
+            height:25px;
+            line-height:25px;
+            background-color:#ffe48b;
+            color:#ff1601;
+            font-weight:bold;
+        }
+        .mid{
+            background-image:url("img/rw.png");
+            background-repeat: no-repeat;
+            width:763px;
+            height:90px;
+            border:1px #c44413 solid;
+            margin-left:18px;
+            position:relative;
+            margin-bottom:15px;
+        }
+        .mid_text1{
+            position:absolute;
+            top:12px;
+            left:347px;
+            font-weight:bold;
+            font-size:20px;
+            line-height:22px;
+        }
+        .mid_text2{
+            position:absolute;
+            top:56px;
+            left:347px;
+            background-color:#d20001;
+            width:139px;
+            height:24px;
+            color:#dbfcb7;
+            font-size:22px;
+            text-align:center;
+            line-height:24px;
+        }
+        .mid_text3{
+            position:absolute;
+            top:56px;
+            left:486px;
+            background-color:#0300c5;
+            width:90px;
+            height:24px;
+            color:#dbfcb7;
+            font-size:22px;
+            text-align:center;
+            line-height:24px;
+        }
+        .bottom{
+            margin-bottom:23px;
+        }
+        .bottom_left,.bottom_mid,.bottom_right{
+            float:left;
+            width:250px;
+            height:255px;
+            border:1px #c44413 solid;
+        }
+        .bottom_left,.bottom_mid{
+            position:relative;
+        }
+        .bottom_left{
+            margin-left:17px;
+            margin-right:8px;
+        }
+        .question{
+            padding-left:10px;
+            margin-bottom:15px;
+            width:248px;
+            height:35px;
+            line-height:35px;
+            background-color:#ffe48b;
+            color:#d11c00;
+            font-weight:bold;
+            font-size:15px;
+        }
+        .bottom_left li{
+            font-size:13px;
+            line-height:24px;
+            background-image:url("img/li.png");
+            background-repeat: no-repeat;
+            margin-left:3px;
+        }
+        .bottom_left li a{
+            text-overflow: ellipsis;
+            padding-left:10px;
+        }
+        .bottom_mid{
+            margin-right:8px
+        }
+        .more li a{
+            position:absolute;
+            bottom:21px;
+            right:30px;
+        }
+        .bottom_mid li{
+            font-size:13px;
+            line-height:24px;
+            background-image:url("img/li.png");
+            background-repeat: no-repeat;
+            margin-left:3px;
+        }
+        .bottom_mid li a{
+            display:block;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+        .money{
+            width:248px;
+            height:25px;
+            line-height:25px;
+            background-color:#ffe48b;
+            color:#d11c00;
+            font-weight:bold;
+            font-size:15px;
+            padding-left:10px;
+            margin-bottom:19px;
+        }
+        .bottom_right_mid{
+            font-weight:bold;
+            font-size:15px;
+            padding-left:17px;
+            line-height:25px;
+            background-image:url("img/li.png");
+            background-repeat: no-repeat;
+            margin-left:11px;
+        }
+        .client{
+            line-height:25px;
+            padding-left:10px;
+            padding-right:12px;
+        }
+        .footer_top{
+            width:765px;
+            margin:0 auto;
+            text-align:center;
+        }
+        .footer_bottom{
+            width:765px;
+            font-weight:bold;
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="allpage">
+    <div class="header">
+        <img src="img/h.png"/>
+        <div class="top clearfix">
+        <ul>
+            <li class="top_left"><a href="#">返回百度西安首页</a></li>
+            <li class="top_right"><a href="#">添加收藏</a></li>
+        </ul>
+    </div>
+        <div class="text">百度西安24小时销售热线029-81136230 15029901190</div>
+        <div class="nav clearfix">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">服务介绍</a></li>
+                <li><a href="#">收费标准</a></li>
+                <li><a href="#">精彩案例</a></li>
+                <li><a href="#">媒体报道</a></li>
+                <li><a href="#">常见问题</a></li>
+                <li><a href="#">火爆地带</a></li>
+                <li><a href="#">客服论坛</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="section clearfix">
+        <div class="left_sec">
+            <div class="left_sec_top">
+                <h2>筑巢引凤<br/>坐等客户找上门!</h2>
+                <form>
+                    <input type="button" value="立即申请购买服务"/>
+                </form>
+            </div>
+            <div class="left_sec_mid">
+                <form>
+                    <div class="keyword"><input placeholder="请输入关键字"/></div>
+                    <div class="price"><input type="button" value="查询竞价情况"/></div>
+                    <ul>
+                        <li><a href="#">授权代理商查询</a></li>
+                    </ul>
+                </form>
+            </div>
+            <div class="left_sec_bottom ">
+                <div class="clearfix">
+                    <h4>【百度西安】&nbsp:</h4>
+                    <div class="blue">
+                    <ul>
+                        <li><a href="#">“百度一下，让你更强！”
+                            2008百度商学院财富讲堂（西安）会议</a></li>
+                    </ul>
+                </div>
+                    <div class="red">
+                    <ul>
+                        <li><a href="#">New!</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="clearfix">
+                    <p>【特别通知】&nbsp:</p>
+                    <div class="text1">百度2008（西安地区）“中小企业营销峰会
+                    即将召开”
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="text3">时间：2008--11--13</div>
+                    <div class="text4">下午 ：13：30</div>
+                </div>
+                <div class="clearfix">
+                    <div class="text5">地点：西安曲江宾馆第三国际会议大厅</div>
+                    <div class="text6">咨询热线：</div>
+                    <div class="text7">029-81136230&nbsp&nbsp&nbsp&nbsp
+                        15029901190&nbsp&nbsp&nbsp&nbsp宋百万&nbsp&nbsp&nbsp&nbsp经理
+                    </div>
+                    <div class="text8">
+                        <ul>
+                        <li><a href="#">New!</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="right_sec">
+            <div class="consult">咨询热线</div>
+            <div class="right_sec_top">
+                <p>百度全国：400-650-6510</p>
+                <p>百度上海：400-670-0707</p>
+                <P>百度广东：400-886-8844</P>
+                <p>百度广州：400-678-6669</p>
+                <p>百度陕西：029-81136230</p>
+                <P>百度西安：15029901190</P>
+            </div>
+            <div class="right_sec_mid">
+            <div class="black">
+                <p>百度服务QQ:965400943</p>
+                <p>百度西安服务中心：</p>
+                <p>陕西博德电子科技有限责任公司</p>
+            </div>
+                <P>24小时服务热线：15029901190</P>
+            </div>
+            <p class="service">百度售后服务在线</p>
+        </div>
+
+    </div>
+    <div class="mid">
+        <div class="mid_text1">新经济环境下，<br/>温州企业
+            如何掌握营销主动权？
+        </div>
+        <div class="mid_text2">新经济.新温商</div>
+        <div class="mid_text3">巅峰对话</div>
+    </div>
+    <div class="bottom clearfix">
+        <div class="bottom_left">
+            <div class="question">常见问题</div>
+            <ul>
+                <li><a href="#">我想要删除一部分关键词，一个一个删太</a></li>
+                <li><a href="#">系统已经提示关键词提交成功，可在关键</a></li>
+                <li><a href="#">我的网站还没开通，可以提前注册吗？</a></li>
+                <li><a href="#">交费后，多长时间可以开通白度竞价排名</a></li>
+                <li><a href="#">百度竞价排名系统和网络广告有什么区别</a></li>
+                <li><a href="#">百度竞价排名服务是如何收费的？</a></li>
+                <div class="more"><li><a href="#">更多&#62&#62&#62</a></li></div>
+            </ul>
+        </div>
+        <div class="bottom_mid">
+            <div class="question">媒体报道</div>
+            <ul>
+                <li><a href="#">2004年6月搜索内网站月均每日访客浏览页</a></li>
+                <li><a href="#">百度挫败Google Alexa访问量升至全球第一</a></li>
+                <li><a href="#">搜索服务网站CISI人气榜 百度流量居首位</a></li>
+                <li><a href="#">百度进驻“中国硅谷”锻造互联网新传奇</a></li>
+                <li><a href="#">白度：改变商业规则的力量</a></li>
+                <div class="more"><li><a href="#">更多&#62&#62&#62</a></li></div>
+            </ul>
+        </div>
+        <div class="bottom_right">
+            <div class="money">百度竞价排名收费标准</div>
+            <div class="bottom_right_mid">竞价排名推广最低预付金为<br/>
+            3000元:
+            </div>
+            <div class="client">当有潜在客户通过竞价排名点击访问您的网站后，百度会从您的账号中
+            扣除相应费用</div>
+            <div class="bottom_right_mid">专业服务费600元/年：</div>
+            <div class="client">为您提供咨询、开户、管理、关键字访问报告4项专业服务</div>
+
+        </div>
+    </div>
+    <div class="footer_top">&#169 2008百度西安分公司（百度西安客户服务中心-陕西
+        博得电子科技有限责任公司</div>
+    <div class="footer_bottom">百度西安地区营销服务中心官方网址（www.baiduxc.com.cn）
+        其他百度西安站点均与本公司无关！</div>
+</div>
+</body>
+</html>
